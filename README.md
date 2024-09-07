@@ -22,11 +22,17 @@ A simple task management system built with Spring Boot and MySQL.
 
 Update src/main/resources/application.properties with your MySQL database details:
 
-- spring.datasource.url=jdbc:mysql://localhost:3306/task_management_db
-- spring.datasource.username=root
-- spring.datasource.password=password
-- spring.jpa.hibernate.ddl-auto=update
-- spring.jpa.show-sql=true
+# MySQL Database Connection Configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/task_management_db
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# Hibernate JPA Configuration
+spring.jpa.hibernate.ddl-auto=update 
+spring.jpa.show-sql=true
+spring.jpa.generate-ddl=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 Check the Uploaded SQL file for Create Database and Tables
 
