@@ -24,7 +24,6 @@ public class TaskService {
         return taskRepository.findAll();
     }
 
-
     /**
      * create task method.
      * @param task
@@ -68,7 +67,7 @@ public class TaskService {
      */
     public void deleteTask(Long id) {
         Task task = taskRepository.findById(id)
-                .orElseThrow(()->  new TaskNotFoundException("Task not found"));
+                .orElseThrow(()->  new TaskNotFoundException("Task not found For Id : " +id ));
         taskRepository.delete(task);
     }
 }

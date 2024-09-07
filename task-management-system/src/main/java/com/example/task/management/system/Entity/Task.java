@@ -29,7 +29,7 @@ public class Task {
     private String description;
 
     @Column
-    private Boolean completed;
+    private Boolean completed = false;
 
     @Column
     private Date createdDate = new Date();

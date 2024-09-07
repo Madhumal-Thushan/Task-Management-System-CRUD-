@@ -67,7 +67,8 @@ public class TaskControllerTest {
     @Test
     void testDeleteTask() {
         doNothing().when(taskService).deleteTask(1L);
-        ResponseEntity<Void> response = taskController.deleteTask(1L);
-        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+        ResponseEntity<String> response = taskController.deleteTask(1L);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("Task deleted successfully!.", response.getBody());
     }
 }

@@ -10,6 +10,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +30,25 @@ public class TaskServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
+
+    @Test
+    void testGetAllTasks() {
+        // Arrange
+        Task task1 = new Task();
+        task1.setTitle("Task 1");
+        Task task2 = new Task();
+        task2.setTitle("Task 2");
+        List<Task> tasks = Arrays.asList(task1, task2);
+
+        when(taskRepository.findAll()).thenReturn(tasks);
+
+        List<Task> result = taskService.getAllTasks();
+
+        assertEquals(2, result.size());
+        assertEquals("Task 1", result.get(0).getTitle());
+        assertEquals("Task 2", result.get(1).getTitle());
+        verify(taskRepository, times(1)).findAll();
+    }
 
     @Test
     void testCreateTask() {
