@@ -16,7 +16,7 @@ A simple task management system built with Spring Boot and MySQL.
 
 1. **Clone the Repository**:
    ```sh
-   git clone https://github.com/your-username/task-management-system.git
+   https://github.com/Madhumal-Thushan/Task-Management-System-CRUD-
 
 ## Configure the Database:
 
