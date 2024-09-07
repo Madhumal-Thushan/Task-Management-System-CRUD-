@@ -28,6 +28,8 @@ Update src/main/resources/application.properties with your MySQL database detail
 - spring.jpa.hibernate.ddl-auto=update
 - spring.jpa.show-sql=true
 
+Check the Uploaded SQL file for Create Database and Tables
+
 ## API Endpoints
 
 - GET /tasks: Retrieve all tasks
