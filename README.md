@@ -21,7 +21,7 @@ A simple task management system built with Spring Boot and MySQL.
 ## Configure the Database:
 
 Update src/main/resources/application.properties with your MySQL database details:
-```sh
+
 spring.datasource.url=jdbc:mysql://localhost:3306/task_management_db
 spring.datasource.username=root
 spring.datasource.password=password
