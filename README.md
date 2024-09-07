@@ -30,7 +30,7 @@ Update src/main/resources/application.properties with your MySQL database detail
 
 Check the Uploaded SQL file for Create Database and Tables
 
-## API Endpoints and Postman CURLs
+## API Endpoints
 
 - GET /tasks: Retrieve all tasks                  
 - GET /tasks/get/{id}: Retrieve a task by ID      
@@ -38,13 +38,27 @@ Check the Uploaded SQL file for Create Database and Tables
 - PUT /tasks/update/{id}: Update an existing task
 - DELETE /tasks/delete/{id}: Delete a task by ID
 
+## Postman CURLs
 
-```sh
- Get Allcurl --location 'http://localhost:8080/api/tasks'
- Get by Iurl --location 'http://localhost:8080/api/tasks/get/2'
+ curl --location 'http://localhost:8080/api/tasks'
+ curl --location 'http://localhost:8080/api/tasks/get/2'
+ 
  curl --location 'http://localhost:8080/api/tasks/create' \
 --header 'Content-Type: application/json' \
 --data '{
     "title": "new task7",
     "description": "new Task 7 description"
 }'
+
+curl --location --request PUT 'http://localhost:8080/api/tasks/update/7' \
+--header 'Content-Type: application/json' \
+--data '{
+    "id": 7,
+    "title": "new task7",
+    "description": "new Task 7 description updated",
+    "completed": false,
+    "createdDate": "2024-09-07T18:41:20.938+00:00",
+    "updatedDate": null
+}'
+
+curl --location --request DELETE 'http://localhost:8080/api/tasks/delete/2'
