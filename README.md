@@ -39,7 +39,7 @@ Check the Uploaded SQL file for Create Database and Tables
 - DELETE /tasks/delete/{id}: Delete a task by ID
 
 ## Postman CURLs
-
+````
  curl --location 'http://localhost:8080/api/tasks'
  curl --location 'http://localhost:8080/api/tasks/get/2'
  
@@ -62,3 +62,4 @@ curl --location --request PUT 'http://localhost:8080/api/tasks/update/7' \
 }'
 
 curl --location --request DELETE 'http://localhost:8080/api/tasks/delete/2'
+````
